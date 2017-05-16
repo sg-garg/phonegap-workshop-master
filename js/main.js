@@ -9,10 +9,11 @@ var app = {
 		// $('body').html(html);
 		// $('.search-key').on('keyup', $.proxy(this.findByName, this));
 	// },
-	renderHomeView: function() {
-		$('body').html(this.homeTpl());
-		$('.search-key').on('keyup', $.proxy(this.findByName, this));
-	},
+	// renderHomeView: function() {
+		// $('body').html(this.homeTpl());
+		// alert(this.homeTpl());
+		// $('.search-key').on('keyup', $.proxy(this.findByName, this));
+	// },
     // findByName: function() {
         // console.log('findByName');
         // this.store.findByName($('.search-key').val(), function(employees) {
@@ -26,19 +27,26 @@ var app = {
         // });
     // },
 	
-	findByName: function() {
-		var self = this;
-		this.store.findByName($('.search-key').val(), function(employees) {
-			$('.employee-list').html(self.employeeLiTpl(employees));
-		});
-	},
+	// findByName: function() {
+		// var self = this;
+		// this.store.findByName($('.search-key').val(), function(employees) {
+			// $('.employee-list').html(self.employeeLiTpl(employees));
+		// });
+	// },
 
-    initialize: function() {
+    // initialize: function() {
+		// var self = this;
+		// this.homeTpl = Handlebars.compile($("#home-tpl").html());
+		// this.employeeLiTpl = Handlebars.compile($("#employee-li-tpl").html());
+		// this.store = new MemoryStore(function() {
+			// self.renderHomeView();
+		// });
+	// }
+	
+	initialize: function() {
 		var self = this;
-		this.homeTpl = Handlebars.compile($("#home-tpl").html());
-		this.employeeLiTpl = Handlebars.compile($("#employee-li-tpl").html());
 		this.store = new MemoryStore(function() {
-			self.renderHomeView();
+			$('body').html(new HomeView(self.store).render().el);
 		});
 	}
 	,
