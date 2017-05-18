@@ -12,6 +12,7 @@
 	</script>
 
 	<script id="employee-tpl" type="text/x-handlebars-template">
+		
 		<div class='header'><a href='#' class="button header-button header-button-left">Back</a><h1>Details</h1></div>
 		<div class='details'>
 			<img class='employee-image' src='img/{{firstName}}_{{lastName}}.jpg' />
@@ -22,8 +23,10 @@
 				<li><a href="tel:{{officePhone}}">Call Office<br/>{{officePhone}}</a></li>
 				<li><a href="tel:{{cellPhone}}">Call Cell<br/>{{cellPhone}}</a></li>
 				<li><a href="sms:{{cellPhone}}">SMS<br/>{{cellPhone}}</a></li>
+				<li><a href="#" class="add-location-btn">Add Location</a></li>
 			</ul>
 		</div>
+		
 	</script>
 
 	<script id="employee-li-tpl" type="text/x-handlebars-template">

@@ -90,7 +90,8 @@ var app = {
 	registerEvents: function() {
 		var self = this;
 		$(window).on('hashchange', $.proxy(this.route, this));
-		this.showAlert("in register event", 'registerEvent');
+		//this.el.on('click', '.add-location-btn', this.addLocation);
+		//this.showAlert("in register event", 'registerEvent');
 		// Check of browser supports touch events...
 		if (document.documentElement.hasOwnProperty('ontouchstart')) {
 			// ... if yes: register touch event listener to change the "selected" state of the item
@@ -109,6 +110,7 @@ var app = {
 				$(event.target).removeClass('tappable-active');
 			});
 		}
+		
 	}
 
 };
